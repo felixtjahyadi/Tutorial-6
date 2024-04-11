@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Tileset/StoneWorld.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/Familiar Looking Rocket.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Area Trigger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Life Counter.tscn" type="PackedScene" id=5]
 
 [node name="Level 1" type="Node2D"]
 
@@ -29,3 +30,7 @@ sceneName = "Level 2"
 [node name="Area Trigger" parent="." instance=ExtResource( 4 )]
 position = Vector2( 892.925, 781.593 )
 scale = Vector2( 7.65, 0.1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Fonts/font_4.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/Fonts/font_1.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/Back2Menu.gd" type="Script" id=3]
+
+[node name="ColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.372549, 0.0156863, 0.0156863, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 60.0
+margin_top = 200.0
+margin_right = 961.0
+margin_bottom = 329.0
+custom_fonts/font = ExtResource( 1 )
+text = "GAME OVER"
+
+[node name="LinkButton" type="LinkButton" parent="."]
+margin_left = 370.0
+margin_top = 450.0
+margin_right = 649.0
+margin_bottom = 572.0
+custom_fonts/font = ExtResource( 2 )
+text = "menu"
+script = ExtResource( 3 )
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_LinkButton_pressed"]

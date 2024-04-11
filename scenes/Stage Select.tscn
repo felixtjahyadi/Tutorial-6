@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Fonts/font_1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/Fonts/font_3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/Level 1.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Level 2.gd" type="Script" id=4]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.027451, 0, 0.470588, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 142.0
+margin_top = 226.0
+margin_right = 882.0
+margin_bottom = 373.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 740.0
+margin_bottom = 122.0
+custom_fonts/font = ExtResource( 1 )
+text = "STAGE SELECT"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 126.0
+margin_right = 740.0
+margin_bottom = 147.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 253.0
+margin_right = 487.0
+margin_bottom = 21.0
+custom_constants/separation = 50
+
+[node name="LinkButton" type="LinkButton" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 88.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level 1"
+script = ExtResource( 3 )
+
+[node name="LinkButton2" type="LinkButton" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 138.0
+margin_right = 234.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level 2"
+script = ExtResource( 4 )
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/LinkButton" to="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/LinkButton" method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/LinkButton2" to="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/LinkButton2" method="_on_LinkButton2_pressed"]
